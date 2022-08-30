@@ -382,6 +382,8 @@ declare module 'ccxt' {
         createLimitBuyOrder (symbol: string, amount: number, price: number, params?: Params): Promise<Order>;
         createLimitSellOrder (symbol: string, amount: number, price: number, params?: Params): Promise<Order>;
         createMarketOrder (symbol: string, side: Order['side'], amount: number, price?: number, params?: Params): Promise<Order>;
+        createMarketBuyOrder (symbol: string, amount: number, params?: Params): Promise<Order>;
+        createMarketSellOrder (symbol: string, amount: number, params?: Params): Promise<Order>;
         createOrder (symbol: string, type: Order['type'], side: Order['side'], amount: number, price?: number, params?: Params): Promise<Order>;
         decode (str: string): string;
         defaults (): any;
@@ -447,6 +449,7 @@ declare module 'ccxt' {
     /* tslint:disable */
 
     export class aax extends Exchange {}
+    export class alpaca extends Exchange {}
     export class ascendex extends Exchange {}
     export class bequant extends hitbtc {}
     export class bibox extends Exchange {}
@@ -461,7 +464,7 @@ declare module 'ccxt' {
     export class bitbns extends Exchange {}
     export class bitcoincom extends fmfwio {}
     export class bitfinex extends Exchange {}
-    export class bitfinex2 extends bitfinex {}
+    export class bitfinex2 extends Exchange {}
     export class bitflyer extends Exchange {}
     export class bitforex extends Exchange {}
     export class bitget extends Exchange {}
@@ -481,6 +484,7 @@ declare module 'ccxt' {
     export class blockchaincom extends Exchange {}
     export class btcalpha extends Exchange {}
     export class btcbox extends Exchange {}
+    export class btcex extends Exchange {}
     export class btcmarkets extends Exchange {}
     export class btctradeua extends Exchange {}
     export class btcturk extends Exchange {}
@@ -496,7 +500,6 @@ declare module 'ccxt' {
     export class coincheck extends Exchange {}
     export class coinex extends Exchange {}
     export class coinfalcon extends Exchange {}
-    export class coinflex extends Exchange {}
     export class coinmate extends Exchange {}
     export class coinone extends Exchange {}
     export class coinspot extends Exchange {}
@@ -512,7 +515,8 @@ declare module 'ccxt' {
     export class fmfwio extends hitbtc {}
     export class ftx extends Exchange {}
     export class ftxus extends ftx {}
-    export class gateio extends Exchange {}
+    export class gate extends Exchange {}
+    export class gateio extends gate {}
     export class gemini extends Exchange {}
     export class hitbtc extends Exchange {}
     export class hitbtc3 extends Exchange {}
@@ -555,8 +559,8 @@ declare module 'ccxt' {
     export class tidebit extends Exchange {}
     export class tidex extends Exchange {}
     export class timex extends Exchange {}
+    export class tokocrypto extends Exchange {}
     export class upbit extends Exchange {}
-    export class vcc extends Exchange {}
     export class wavesexchange extends Exchange {}
     export class wazirx extends Exchange {}
     export class whitebit extends Exchange {}
@@ -572,6 +576,7 @@ declare module 'ccxt' {
 
     export type ExchangeId =
         | 'aax'
+        | 'alpaca'
         | 'ascendex'
         | 'bequant'
         | 'bibox'
@@ -606,6 +611,7 @@ declare module 'ccxt' {
         | 'blockchaincom'
         | 'btcalpha'
         | 'btcbox'
+        | 'btcex'
         | 'btcmarkets'
         | 'btctradeua'
         | 'btcturk'
@@ -621,7 +627,6 @@ declare module 'ccxt' {
         | 'coincheck'
         | 'coinex'
         | 'coinfalcon'
-        | 'coinflex'
         | 'coinmate'
         | 'coinone'
         | 'coinspot'
@@ -637,6 +642,7 @@ declare module 'ccxt' {
         | 'fmfwio'
         | 'ftx'
         | 'ftxus'
+        | 'gate'
         | 'gateio'
         | 'gemini'
         | 'hitbtc'
@@ -680,8 +686,8 @@ declare module 'ccxt' {
         | 'tidebit'
         | 'tidex'
         | 'timex'
+        | 'tokocrypto'
         | 'upbit'
-        | 'vcc'
         | 'wavesexchange'
         | 'wazirx'
         | 'whitebit'
